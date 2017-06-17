@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
     tableWidget->setWindowTitle("Student result display");
-    tableWidget->resize(350,200);
+    tableWidget->resize(700,300);
     QStringList header;
     header << "id" << "name" << "type" << "enrollmentYear";
     tableWidget->setHorizontalHeaderLabels(header);
