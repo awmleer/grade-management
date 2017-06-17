@@ -27,18 +27,18 @@ bool Db::test(){
     int nameNo = query.record().indexOf("name");
     int typeNo = query.record().indexOf("type");
     int enrollmentYearNo = query.record().indexOf("enrollmentYear");
-//    vector<Student> students;
+    vector<Student> students;
     while (query.next())
     {
-//        Student student(
-//                    query.value(idNo).toInt(),
-//                    query.value(nameNo).toString(),
-//                    query.value(typeNo).toString(),
-//                    query.value(enrollmentYearNo).toInt()
-//                    );
-//        students.push_back(student);
+        Student student(
+                    query.value(idNo).toInt(),
+                    query.value(nameNo).toString(),
+                    query.value(typeNo).toString(),
+                    query.value(enrollmentYearNo).toInt()
+                    );
+        students.push_back(student);
 //        QString name = query.value(nameNo).toString();
-//        qDebug() << students.size();
+        qDebug() << students.size();
     }
     return true;
 }

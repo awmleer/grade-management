@@ -18,8 +18,9 @@ int main(int argc, char *argv[])
     w.show();
 
     std::vector<Student> res;
-    res.push_back({1,"zhao","graduate",2016});
-    res.push_back({2,"zhao","graduate",2016});
+    Student student(1,"zhao","graduate",2016);
+    res.push_back(student);
+    res.push_back(student);
 
     QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
     tableWidget->setWindowTitle("Student result display");
