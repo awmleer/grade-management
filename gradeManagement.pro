@@ -27,13 +27,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         db.cpp \
-    student.cpp \
-    student.cpp
+        student.cpp
+        dialog.cpp
 
 HEADERS += \
         mainwindow.h \
         db.h \
-    student.h
+        student.h\
+        dialog.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    dialog.ui
