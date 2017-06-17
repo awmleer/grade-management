@@ -33,9 +33,7 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
         db.h \
-        student.h\
-        dialog.h
+        student.h
 
 FORMS += \
-        mainwindow.ui \
-    dialog.ui
+        mainwindow.ui
