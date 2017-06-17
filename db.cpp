@@ -21,7 +21,7 @@ bool Db::connect(){
     return true;
 }
 
-bool Db::test(){
+vector<Student> Db::test(){
     QSqlQuery query("SELECT * FROM student");
     int idNo = query.record().indexOf("id");
     int nameNo = query.record().indexOf("name");
@@ -40,5 +40,5 @@ bool Db::test(){
 //        QString name = query.value(nameNo).toString();
         qDebug() << students.size();
     }
-    return true;
+    return students;
 }

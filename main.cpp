@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <vector>
 
+using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +18,11 @@ int main(int argc, char *argv[])
     w.setWindowTitle("query result");
     w.show();
 
-    std::vector<Student> res;
-    Student student(1,"zhao","graduate",2016);
-    res.push_back(student);
-    res.push_back(student);
+    vector<Student> res = Db::test();
+
+//    Student student(1,"zhao","graduate",2016);
+//    res.push_back(student);
+//    res.push_back(student);
 
     QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
     tableWidget->setWindowTitle("Student result display");
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
     header << "id" << "name" << "type" << "enrollmentYear";
     tableWidget->setHorizontalHeaderLabels(header);
     for (int i = 0;i < res.size();i++) {
-        tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(res[i].id,10)));
+        tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(res[i].getId(),10)));
         tableWidget->setItem(i,1,new QTableWidgetItem(res[i].name));
         tableWidget->setItem(i,2,new QTableWidgetItem(res[i].type));
         tableWidget->setItem(i,3,new QTableWidgetItem(QString::number(res[i].enrollmentYear,10)));
