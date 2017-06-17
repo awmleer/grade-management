@@ -13,8 +13,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    Db::connect();//init sqlite database
-    Db::test();
+    bool dbInitResult=Db::init();//init sqlite database
+    if (dbInitResult==false){
+        qDebug() << "db init failed";
+    }else{
+        qDebug() << "db init success";
+    }
+    Db::testInsert();
     w.setWindowTitle("query result");
     w.show();
 

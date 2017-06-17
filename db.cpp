@@ -21,6 +21,34 @@ bool Db::connect(){
     return true;
 }
 
+bool Db::init(){
+    bool connectResult = Db::connect();
+    if (connectResult==false) return false;
+    qDebug() << "db connect: " << connectResult;
+    QSqlQuery query;
+    qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS student ("
+                              "id INTEGER PRIMARY KEY,"
+                              "name VARCHAR(30),"
+                              "type VARCHAR(10),"
+                              "enrollmentYear SMALLINT"
+                              ");"
+                              );
+    return query.exec();
+}
+
+bool Db::testInsert(){
+    QSqlQuery query;
+    query.prepare("INSERT INTO student (id, name, type, enrollmentYear) "
+                  "VALUES (:id, :name, :type, :enrollmentYear)"
+                  );
+    query.bindValue(":id", 1001);
+    query.bindValue(":name", "Bart");
+    query.bindValue(":type", "master");
+    query.bindValue(":enrollmentYear",2016);
+    return query.exec();
+}
+
+
 vector<Student> Db::test(){
     QSqlQuery query("SELECT * FROM student");
     int idNo = query.record().indexOf("id");
@@ -37,8 +65,8 @@ vector<Student> Db::test(){
                     query.value(enrollmentYearNo).toInt()
                     );
         students.push_back(student);
-//        QString name = query.value(nameNo).toString();
-        qDebug() << students.size();
+        //        QString name = query.value(nameNo).toString();
     }
+    qDebug() << students.size();
     return students;
 }

@@ -7,7 +7,9 @@ using namespace std;
 
 namespace Db {
     bool connect();
+    bool init();
     vector<Student> test();
+    bool testInsert();
 }
 
 
