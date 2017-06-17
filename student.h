@@ -4,9 +4,10 @@
 
 class Student{
 public:
-    Student(int id);
+    //Student();
+    //Student(int id);
 //    Student(int id, QString name, QString type, int enrollmentYear);
-private:
+//private:
     int id;
     QString name;
     QString type;

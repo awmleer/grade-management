@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include "db.h"
+#include "student.h"
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QDebug>
