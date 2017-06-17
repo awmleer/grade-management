@@ -6,7 +6,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    db::connect();//init sqlite database
+    Db::connect();//init sqlite database
+    Db::test();
     w.show();
 
 

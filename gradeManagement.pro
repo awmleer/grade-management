@@ -30,7 +30,7 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    db.h
+        db.h
 
 FORMS += \
         mainwindow.ui
