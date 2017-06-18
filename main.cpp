@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     }
 
 
-       tableWidget->show();
+    tableWidget->show();
 
     return a.exec();
 }
