@@ -20,6 +20,9 @@ int main(int argc, char *argv[])
         qDebug() << "db init success";
     }
     Db::testInsert();
+//    Db::testUpdate();
+//    Db::testDelete();
+//    Db::testDeleteall();
     w.setWindowTitle("query result");
     w.show();
 

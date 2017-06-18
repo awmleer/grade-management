@@ -10,6 +10,9 @@ namespace Db {
     bool init();
     vector<Student> test();
     bool testInsert();
+    bool testUpdate();
+    bool testDelete();
+    bool testDeleteall();
 }
 
 
