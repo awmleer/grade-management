@@ -109,7 +109,8 @@
      <string>类型</string>
     </property>
     <property name="icon">
-     <iconset theme="undergraduate"/>
+     <iconset theme="undergraduate">
+      <normaloff>.</normaloff>.</iconset>
     </property>
    </item>
   </widget>
