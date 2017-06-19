@@ -1,12 +1,18 @@
 #ifndef DB_H
 #define DB_H
 #include <QtSql>
+#include "student.h"
 
 using namespace std;
 
 namespace Db {
     bool connect();
-    bool test();
+    bool init();
+    vector<Student> test();
+    bool testInsert();
+    bool testUpdate();
+    bool testDelete();
+    bool testDeleteall();
 }
 
 

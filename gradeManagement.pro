@@ -27,13 +27,25 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         db.cpp \
-        student.cpp
+        student.cpp \
+    insertgrade.cpp \
+    insertstudent.cpp \
+    selectgrade.cpp \
+    selectstudent.cpp
         dialog.cpp
 
 HEADERS += \
         mainwindow.h \
         db.h \
-        student.h
+        student.h \
+    insertgrade.h \
+    insertstudent.h \
+    selectgrade.h \
+    selectstudent.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    insertgrade.ui \
+    insertstudent.ui \
+    selectgrade.ui \
+    selectstudent.ui
