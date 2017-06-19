@@ -12,3 +12,9 @@ selectstudent::~selectstudent()
 {
     delete ui;
 }
+
+void selectstudent::on_pushButton_clicked()
+{
+    this->hide();
+    return;
+}

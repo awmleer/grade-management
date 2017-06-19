@@ -28,16 +28,6 @@
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>913</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -50,8 +40,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>747</x>
-     <y>552</y>
+     <x>790</x>
+     <y>557</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>

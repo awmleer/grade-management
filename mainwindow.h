@@ -15,6 +15,16 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void findStudentSlot();
+
+    void insertStudentSlot();
+
+    void findGradeSlot();
+
+    void insertGradeSlot();
+
+
 private:
     Ui::MainWindow *ui;
 };

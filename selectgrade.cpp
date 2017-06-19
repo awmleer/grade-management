@@ -12,3 +12,9 @@ selectgrade::~selectgrade()
 {
     delete ui;
 }
+
+void selectgrade::on_pushButton_clicked()
+{
+    this->hide();
+    return;
+}
