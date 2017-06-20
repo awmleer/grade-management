@@ -27,6 +27,19 @@
      <string>Quit</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>69</y>
+      <width>211</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>insert</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -50,8 +63,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>747</x>
-     <y>552</y>
+     <x>790</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>

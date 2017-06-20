@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include "db.h"
+#include "insertgrade.h"
 #include "student.h"
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+
     bool dbInitResult=Db::init();//init sqlite database
     if (dbInitResult==false){
         qDebug() << "db init failed";
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
 //    res.push_back(student);
 //    res.push_back(student);
 
-    QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
+/*    QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
     tableWidget->setWindowTitle("Student result display");
     tableWidget->resize(900,300);
     QStringList header;
@@ -40,10 +42,12 @@ int main(int argc, char *argv[])
         tableWidget->setItem(i,1,new QTableWidgetItem(res[i].name));
         tableWidget->setItem(i,2,new QTableWidgetItem(res[i].type));
         tableWidget->setItem(i,3,new QTableWidgetItem(QString::number(res[i].enrollmentYear,10)));
-    }
+    }*/
 
 
-    tableWidget->show();
+    //tableWidget->show();
+
+    //QObject::connect((w.ui->pushButton_3),SIGNAL(clicked()),&tableWidget,SLOT(show()));
 
     return a.exec();
 }
