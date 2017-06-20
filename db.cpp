@@ -36,6 +36,17 @@ bool Db::init(){
     return query.exec();
 }
 
+
+bool Db::updateCourse(int id, QString name, QString description){
+    QSqlQuery query;
+    query.prepare("update course set name = :name, description = :description where id = :id");
+    query.bindValue(":id",id);
+    query.bindValue(":name",name);
+    query.bindValue(":description",description);
+    return query.exec();
+}
+
+
 bool Db::testInsert(){
     QSqlQuery query;
     query.prepare("INSERT INTO student (id, name, type, enrollmentYear) "

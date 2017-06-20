@@ -31,7 +31,8 @@ SOURCES += \
     insertgrade.cpp \
     insertstudent.cpp \
     selectgrade.cpp \
-    selectstudent.cpp
+    selectstudent.cpp \
+    course.cpp
         dialog.cpp
 
 HEADERS += \
@@ -41,7 +42,8 @@ HEADERS += \
     insertgrade.h \
     insertstudent.h \
     selectgrade.h \
-    selectstudent.h
+    selectstudent.h \
+    course.h
 
 FORMS += \
         mainwindow.ui \
