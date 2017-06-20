@@ -12,3 +12,15 @@ insertgrade::~insertgrade()
 {
     delete ui;
 }
+
+void insertgrade::on_pushButton_2_clicked()
+{
+    this->hide();
+    return;
+}
+
+void insertgrade::on_pushButton_clicked()
+{
+    this->hide();
+    return;
+}

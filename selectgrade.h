@@ -15,6 +15,9 @@ public:
     explicit selectgrade(QWidget *parent = 0);
     ~selectgrade();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::selectgrade *ui;
 };

@@ -12,7 +12,13 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
+
+//    QFont font = a.font();
+//    font.setPointSize(11);
+//    a.setFont(font);
+
     MainWindow w;
 
     bool dbInitResult=Db::init();//init sqlite database
@@ -22,7 +28,10 @@ int main(int argc, char *argv[])
         qDebug() << "db init success";
     }
     Db::testInsert();
-    w.setWindowTitle("query result");
+//    Db::testUpdate();
+//    Db::testDelete();
+//    Db::testDeleteall();
+    w.setWindowTitle("学生成绩管理系统");
     w.show();
 
     vector<Student> res = Db::test();
@@ -33,7 +42,10 @@ int main(int argc, char *argv[])
 
 /*    QTableWidget * tableWidget = new QTableWidget(res.size(),4,&w);
     tableWidget->setWindowTitle("Student result display");
+    w.setCentralWidget(tableWidget);
+
     tableWidget->resize(900,300);
+
     QStringList header;
     header << "id" << "name" << "type" << "enrollmentYear";
     tableWidget->setHorizontalHeaderLabels(header);

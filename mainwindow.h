@@ -22,11 +22,21 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-public slots:
-    void showText();
+//public slots:
+   // void showText();
 
 private slots:
     void on_pushButton_clicked();
+
+private slots:
+    void findStudentSlot();
+
+    void insertStudentSlot();
+
+    void findGradeSlot();
+
+    void insertGradeSlot();
+
 
 private:
     Ui::MainWindow *ui;

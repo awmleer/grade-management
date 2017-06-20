@@ -48,6 +48,13 @@ bool Db::testInsert(){
     return query.exec();
 }
 
+bool Db::testUpdate(){
+    QSqlQuery update;
+    update.prepare("update student set name = :name where id = :id");
+    update.bindValue(":name","Justin");
+    update.bindValue(":id",1002);
+    return update.exec();
+}
 
 vector<Student> Db::test(){
     QSqlQuery query("SELECT * FROM student");
@@ -69,4 +76,27 @@ vector<Student> Db::test(){
     }
     qDebug() << students.size();
     return students;
+}
+
+bool Db::testDelete(){
+    QSqlQuery SQLdelete;
+    SQLdelete.prepare("delete from student where id = :id");
+    SQLdelete.bindValue(":id",1003);
+    if(!SQLdelete.exec()){
+        qDebug() << "delete failed!";
+    } else {
+        qDebug() << "delete success!";
+    }
+    return SQLdelete.exec();
+}
+
+bool Db::testDeleteall(){
+    QSqlQuery SQLdeleteall;
+    SQLdeleteall.prepare("delete from student");
+    if(!SQLdeleteall.exec()){
+        qDebug() << "delete-all failed!";
+    } else {
+        qDebug() << "delete-all success!";
+    }
+    return SQLdeleteall.exec();
 }
