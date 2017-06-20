@@ -26,6 +26,7 @@ bool Db::init(){
     if (connectResult==false) return false;
     qDebug() << "db connect: " << connectResult;
     QSqlQuery query;
+    //create student table
     qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS student ("
                               "id INTEGER PRIMARY KEY,"
                               "name VARCHAR(30),"
@@ -33,7 +34,34 @@ bool Db::init(){
                               "enrollmentYear SMALLINT"
                               ");"
                               );
-    return query.exec();
+    if(query.exec()==false){
+        return false;
+    }
+    //create course table
+    qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS course ("
+                              "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                              "name VARCHAR(30),"
+                              "description VARCHAR(200)"
+                              ");"
+                              );
+    if(query.exec()==false){
+        return false;
+    }
+    //create grade table
+    qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS grade ("
+                              "studentId INTEGER NOT NULL,"
+                              "courseId INTEGER NOT NULL,"
+                              "takeTime VARCHAR(20), -- eg. '2016first', '2015second'"
+                              "grade INTEGER,"
+                              "PRIMARY KEY (studentId, courseId),"
+                              "FOREIGN KEY (courseId) REFERENCES course(id),"
+                              "FOREIGN KEY (studentId) REFERENCES student(id)"
+                              ");"
+                              );
+    if(query.exec()==false){
+        return false;
+    }
+    return true;
 }
 
 
