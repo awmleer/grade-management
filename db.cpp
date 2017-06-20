@@ -40,7 +40,7 @@ bool Db::init(){
     //create course table
     qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS course ("
                               "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-                              "name VARCHAR(30),"
+                              "name VARCHAR(30) UNIQUE,"
                               "description VARCHAR(200)"
                               ");"
                               );
@@ -74,6 +74,30 @@ bool Db::updateCourse(int id, QString name, QString description){
     return query.exec();
 }
 
+int Db::insertCourse(QString name, QString description){
+    QSqlQuery query;
+    query.prepare("INSERT INTO course (name, description) "
+                  "VALUES (:name, :description);"
+                  );
+    query.bindValue(":name",name);
+    query.bindValue(":description",description);
+    if(query.exec()==false){
+        return -1;
+    }
+    query.prepare("select max(id) from grade;");
+    query.next();
+    return query.value(0).toInt();
+}
+
+
+
+
+
+
+
+/*
+ * Test Functions
+*/
 
 bool Db::testInsert(){
     QSqlQuery query;

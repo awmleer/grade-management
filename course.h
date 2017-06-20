@@ -18,6 +18,7 @@ public:
     }
     void setDescription(QString description);
     bool save();
+    static Course create();
 private:
     int id;
     QString name;

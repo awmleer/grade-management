@@ -10,6 +10,8 @@ namespace Db {
     bool connect();
     bool init();
     bool updateCourse(int id, QString name, QString description);
+    int insertCourse(QString name, QString description);
+
     vector<Student> test();
     bool testInsert();
     bool testUpdate();

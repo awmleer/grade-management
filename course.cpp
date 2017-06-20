@@ -15,3 +15,9 @@ void Course::setDescription(QString description){
 bool Course::save(){
     return Db::updateCourse(id,name,description);
 }
+
+
+Course Course::create(QString name, QString description){
+    int id=Db::insertCourse(name,description);
+    return Course(id,name,description);
+}
