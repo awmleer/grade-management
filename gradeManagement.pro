@@ -51,3 +51,8 @@ FORMS += \
     insertstudent.ui \
     selectgrade.ui \
     selectstudent.ui
+
+RESOURCES += \
+    welcome.qrc
+
+DISTFILES +=
