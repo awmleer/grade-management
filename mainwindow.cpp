@@ -31,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMenu *pStudent = mBar->addMenu("学生管理");
 
     QAction * pSfind = pStudent->addAction("学生查找");
+    //pSfind->   setWindowTitle("学生查找");
     QAction * pSinsert = pStudent->addAction("学生添加");
 
     QMenu *pGrade = mBar->addMenu("成绩管理");
@@ -77,6 +78,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::findStudentSlot()
 {
    selectstudent a;
+   a.setWindowTitle("学生查找");
    a.show();
    a.exec();
    return;
@@ -85,6 +87,7 @@ void MainWindow::findStudentSlot()
 void MainWindow::insertStudentSlot()
 {
     insertStudent a;
+    a.setWindowTitle("学生添加");
     a.show();
     a.exec();
     return;
@@ -93,6 +96,7 @@ void MainWindow::insertStudentSlot()
 void MainWindow::findGradeSlot()
 {
     selectgrade a;
+    a.setWindowTitle("成绩查找");
     a.show();
     a.exec();
     return;
@@ -101,6 +105,7 @@ void MainWindow::findGradeSlot()
 void MainWindow::insertGradeSlot()
 {
     insertgrade a;
+    a.setWindowTitle("成绩添加");
     a.show();
     a.exec();
     return;
