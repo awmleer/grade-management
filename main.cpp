@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include<QLabel>
 #include "db.h"
 #include "insertgrade.h"
 #include "student.h"
@@ -36,6 +37,10 @@ int main(int argc, char *argv[])
 
     vector<Student> res = Db::test();
 
+
+   // QLabel label(&w);
+    //label.setGeometry(100,200,600,100);
+    //label.setText("Welcome");
 //    Student student(1,"zhao","graduate",2016);
 //    res.push_back(student);
 //    res.push_back(student);
