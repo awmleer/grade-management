@@ -11,16 +11,17 @@ public:
     QString getName(){
         return name;
     }
+    void setName(QString name);
     QString getType(){
         return type;
     }
+    void setType(QString type);
     int getEnrollmentYear(){
         return enrollmentYear;
     }
+    void setEnrollmentYear(int enrollmentYear);
 
-    //Student();
-    //Student(int id);
-//    Student(int id, QString name, QString type, int enrollmentYear);
+//TODO: set these properties private
 //private:
     int id;
     QString name;

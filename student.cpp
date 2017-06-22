@@ -7,3 +7,16 @@
 //Student::Student(){}
 Student::Student(int id, QString name, QString type, int enrollmentYear):
     id(id), name(name), type(type), enrollmentYear(enrollmentYear){}
+
+void Student::setName(QString name){
+    name=name;
+}
+
+void Student::setType(QString type){
+    type=type;
+}
+
+void Student::setEnrollmentYear(int enrollmentYear){
+    enrollmentYear=enrollmentYear;
+}
+
