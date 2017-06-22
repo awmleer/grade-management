@@ -79,6 +79,7 @@ vector<Course> Db::queryToCourseVector(QSqlQuery &query){
         courses.push_back(course);
     }
     qDebug() <<"Got "<<courses.size()<<" courses";
+    return courses;
 
 }
 

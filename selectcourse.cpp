@@ -1,4 +1,7 @@
 #include <QMessageBox>
+#include <vector>
+#include <QTableWidget>
+#include "db.h"
 #include "selectcourse.h"
 #include "ui_selectcourse.h"
 
@@ -7,6 +10,7 @@ selectcourse::selectcourse(QWidget *parent) :
     ui(new Ui::selectcourse)
 {
     ui->setupUi(this);
+    this->setWindowTitle(tr("Course selection"));
 }
 
 selectcourse::~selectcourse()
@@ -16,11 +20,34 @@ selectcourse::~selectcourse()
 
 void selectcourse::on_buttonBox_accepted()
 {
-    if (ui->CourseId->text().isEmpty()&&ui->CourseName->text().isEmpty()) {
+    if (ui->CourseId->text().isEmpty()) {
         //QMessageBox::warning(this,tr("添加失败"),tr("请将课程名称和课程编号填写完整"));
         QMessageBox::warning(this,tr("Input inlegal!"),tr("Please complete the course id or course name"));
         return;
     }
+
+    QString idStr =  ui->CourseId->text();
+    int id =idStr.toInt();
+    vector<Course> selCourseRes = Db::searchCourse(id);
+
+    QTableWidget * tableWidget = new QTableWidget(selCourseRes.size(),4);
+    //tableWidget->setWindowTitle("Student result display");
+    //w.setCentralWidget(tableWidget);
+
+    tableWidget->resize(900,300);
+
+    QStringList header;
+    header << "id" << "name" << "description";
+    tableWidget->setHorizontalHeaderLabels(header);
+    for (int i = 0;i < selCourseRes.size();i++) {
+        tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
+        tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
+        tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
+
+    }
+
+    tableWidget->show();
+
 
 //    m_name = ui->CourseName->text();
 //    m_description = ui->Description->text();

@@ -10,7 +10,7 @@ insertcourse::insertcourse(QWidget *parent) :
     ui(new Ui::insertcourse)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("Course insertion");
 
 }
 
