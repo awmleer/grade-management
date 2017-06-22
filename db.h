@@ -11,6 +11,7 @@ namespace Db {
     bool init();
     bool updateCourse(int id, QString name, QString description);
     int insertCourse(QString name, QString description);//returns id of the new course
+    bool deleteCourse(int id);
 
     vector<Student> test();
     bool testInsert();

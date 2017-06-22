@@ -21,3 +21,7 @@ Course Course::create(QString name, QString description){
     int id=Db::insertCourse(name,description);
     return Course(id,name,description);
 }
+
+bool Course::remove(){
+    return Db::deleteCourse(id);
+}

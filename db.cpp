@@ -67,7 +67,7 @@ bool Db::init(){
 
 bool Db::updateCourse(int id, QString name, QString description){
     QSqlQuery query;
-    query.prepare("update course set name = :name, description = :description where id = :id");
+    query.prepare("UPDATE course SET name = :name, description = :description WHERE id = :id");
     query.bindValue(":id",id);
     query.bindValue(":name",name);
     query.bindValue(":description",description);
@@ -89,7 +89,12 @@ int Db::insertCourse(QString name, QString description){
     return query.value(0).toInt();
 }
 
-
+bool Db::deleteCourse(int id){
+    QSqlQuery query;
+    query.prepare("DELETE FROM course WHERE id = :id");
+    query.bindValue(":id",id);
+    return query.exec();
+}
 
 
 
