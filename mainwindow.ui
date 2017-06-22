@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>913</width>
-    <height>600</height>
+    <width>1022</width>
+    <height>854</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>510</y>
+      <x>880</x>
+      <y>680</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -30,16 +30,18 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>250</y>
-      <width>321</width>
-      <height>91</height>
+      <x>0</x>
+      <y>-60</y>
+      <width>1161</width>
+      <height>871</height>
      </rect>
     </property>
     <property name="text">
-     <string>Welcome</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/welcome.jpg/welcome.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>pushButton_2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

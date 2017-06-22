@@ -53,6 +53,15 @@ FORMS += \
         mainwindow.ui \
     insertstudent.ui \
     selectgrade.ui \
+<<<<<<< HEAD
     selectstudent.ui \
     insertcourse.ui \
     selectcourse.ui
+=======
+    selectstudent.ui
+
+RESOURCES += \
+    welcome.qrc
+
+DISTFILES +=
+>>>>>>> 8451e96a7fe1a8ee68f45a5744f80bb7c171e6f2
