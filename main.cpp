@@ -28,7 +28,12 @@ int main(int argc, char *argv[])
     }else{
         qDebug() << "db init success";
     }
-    Db::testInsert();
+
+    Db::searchCourse();
+    Db::searchCourse(1);
+    Db::test();
+
+//    Db::testInsert();
 //    Db::testUpdate();
 //    Db::testDelete();
 //    Db::testDeleteall();

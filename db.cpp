@@ -65,9 +65,42 @@ bool Db::init(){
 }
 
 
+vector<Course> Db::queryToCourseVector(QSqlQuery &query){
+    vector<Course> courses;
+    int idNo = query.record().indexOf("id");
+    int nameNo = query.record().indexOf("name");
+    int descriptionNo = query.record().indexOf("description");
+    while (query.next()){
+        Course course(
+                    query.value(idNo).toInt(),
+                    query.value(nameNo).toString(),
+                    query.value(descriptionNo).toString()
+                    );
+        courses.push_back(course);
+    }
+    qDebug() <<"Got "<<courses.size()<<" courses";
+
+}
+
+
+vector<Course> Db::searchCourse(){
+    qDebug()<<"Running Db::searchCourse()";
+    QSqlQuery query("SELECT * FROM course;");
+    return queryToCourseVector(query);
+}
+
+vector<Course> Db::searchCourse(int id){
+    qDebug()<<"Running Db::searchCourse(int id)";
+    QSqlQuery query;
+    query.prepare("SELECT * FROM course WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.exec();
+    return queryToCourseVector(query);
+}
+
 bool Db::updateCourse(int id, QString name, QString description){
     QSqlQuery query;
-    query.prepare("UPDATE course SET name = :name, description = :description WHERE id = :id");
+    query.prepare("UPDATE course SET name = :name, description = :description WHERE id = :id ;");
     query.bindValue(":id",id);
     query.bindValue(":name",name);
     query.bindValue(":description",description);

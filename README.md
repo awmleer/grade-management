@@ -31,3 +31,10 @@ CREATE TABLE IF NOT EXISTS grade (
 );
 ```
 
+### DB Search Functions
+
+```c++
+vector<Course> searchCourse();//返回所有的course列表
+vector<Course> searchCourse(int id);//通过id查询
+```
+

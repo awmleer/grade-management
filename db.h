@@ -9,6 +9,9 @@ using namespace std;
 namespace Db {
     bool connect();
     bool init();
+    vector<Course> queryToCourseVector(QSqlQuery &query);
+    vector<Course> searchCourse();
+    vector<Course> searchCourse(int id);
     bool updateCourse(int id, QString name, QString description);
     int insertCourse(QString name, QString description);//returns id of the new course
     bool deleteCourse(int id);
