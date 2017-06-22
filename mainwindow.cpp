@@ -3,8 +3,11 @@
 #include <QMenuBar>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "insertgrade.h"
 #include<QDialog>
+#include "insertcourse.h"
+#include "ui_insertcourse.h"
+#include "selectcourse.h"
+#include "ui_selectcourse.h"
 #include "selectstudent.h"
 #include "ui_selectstudent.h"
 #include "insertstudent.h"
@@ -28,17 +31,23 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QMenuBar *mBar = menuBar();
 
-    QMenu *pStudent = mBar->addMenu("学生管理");
+    QMenu *pCourse = mBar->addMenu("课程管理");
+    QAction * pCfind = pCourse->addAction("课程查找");
+    QAction * pCinsert = pCourse->addAction("课程添加");
 
+
+    QMenu *pStudent = mBar->addMenu("学生管理");
     QAction * pSfind = pStudent->addAction("学生查找");
     QAction * pSinsert = pStudent->addAction("学生添加");
 
     QMenu *pGrade = mBar->addMenu("成绩管理");
-
     QAction * pGfind = pGrade->addAction("成绩查找");
     QAction * pGinsert = pGrade->addAction("成绩添加");
 
     QToolBar *toolBar = addToolBar("toolbar");//创建工具栏
+
+    connect(pCfind, SIGNAL(triggered()),this, SLOT(findCourseSlot()));
+    connect(pCinsert, SIGNAL(triggered()),this, SLOT(insertCourseSlot()));
     connect(pSfind, SIGNAL(triggered()),this, SLOT(findStudentSlot()));
     connect(pSinsert, SIGNAL(triggered()),this, SLOT(insertStudentSlot()));
     connect(pGfind, SIGNAL(triggered()),this, SLOT(findGradeSlot()));
@@ -47,7 +56,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     toolBar->setAllowedAreas(Qt::LeftToolBarArea);
 
-    toolBar->addAction(pSfind);//工具栏添加菜单项--快捷键
+    toolBar->addAction(pCfind);//工具栏添加菜单项--快捷键
+    toolBar->addAction(pCinsert);
+    toolBar->addAction(pSfind);
     toolBar->addAction(pSinsert);
     toolBar->addAction(pGfind);
     toolBar->addAction(pGinsert);
@@ -74,6 +85,23 @@ void MainWindow::on_pushButton_clicked()
     }
 
 }
+
+void MainWindow::findCourseSlot()
+{
+   selectcourse a;
+   a.show();
+   a.exec();
+   return;
+}
+
+void MainWindow::insertCourseSlot()
+{
+    insertcourse a;
+    a.show();
+    a.exec();
+    return;
+}
+
 void MainWindow::findStudentSlot()
 {
    selectstudent a;

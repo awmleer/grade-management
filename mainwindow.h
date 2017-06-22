@@ -29,12 +29,15 @@ private slots:
     void on_pushButton_clicked();
 
 private slots:
-    void findStudentSlot();
 
+
+    void findCourseSlot();
+    void insertCourseSlot();
+
+    void findStudentSlot();
     void insertStudentSlot();
 
     void findGradeSlot();
-
     void insertGradeSlot();
 
 
