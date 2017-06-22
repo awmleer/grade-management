@@ -26,7 +26,7 @@ void insertcourse::on_buttonBox_accepted()
         QMessageBox::warning(this,tr("Insertion failed!"),tr("Please complete the course name and description!"));
         return;
     }
-  \
+
     m_name = ui->CourseName->text();
     m_description = ui->Description->text();
     int id = Db::insertCourse(m_name,m_description);

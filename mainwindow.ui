@@ -27,17 +27,17 @@
      <string>Quit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>69</y>
-      <width>211</width>
-      <height>81</height>
+      <x>170</x>
+      <y>250</y>
+      <width>321</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">
-     <string>insert</string>
+     <string>Welcome</string>
     </property>
    </widget>
   </widget>
