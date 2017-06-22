@@ -55,7 +55,8 @@ FORMS += \
     selectgrade.ui \
     selectstudent.ui \
     insertcourse.ui \
-    selectcourse.ui
+    selectcourse.ui \
+    insertgrade.ui
     selectstudent.ui
 
 RESOURCES += \
