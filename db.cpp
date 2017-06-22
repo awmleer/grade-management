@@ -51,7 +51,7 @@ bool Db::init(){
     qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS grade ("
                               "studentId INTEGER NOT NULL,"
                               "courseId INTEGER NOT NULL,"
-                              "takeTime VARCHAR(20), -- eg. '2016first', '2015second'"
+                              "takeTime VARCHAR(20),"
                               "grade INTEGER,"
                               "PRIMARY KEY (studentId, courseId),"
                               "FOREIGN KEY (courseId) REFERENCES course(id),"

@@ -51,7 +51,6 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui \
-    insertgrade.ui \
     insertstudent.ui \
     selectgrade.ui \
     selectstudent.ui \
