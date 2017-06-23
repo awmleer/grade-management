@@ -18,7 +18,7 @@ public:
     void setDescription(QString description);
 
     bool save();
-    static Course create(QString name, QString description);
+    static int create(QString name, QString description);//returns the courseId if success, else returns -1
     bool remove();
 
 private:

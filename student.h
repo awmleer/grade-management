@@ -22,7 +22,7 @@ public:
     void setEnrollmentYear(int enrollmentYear);
 
     bool save();
-    static Student create(QString name, QString description);
+    static int create(int id, QString name, QString type, int enrollmentYear);//returns the courseId if success, else returns -1
     bool remove();
 
 private:
