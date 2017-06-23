@@ -124,8 +124,8 @@
   <widget class="QPushButton" name="insertGrade">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>60</y>
+     <x>390</x>
+     <y>140</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -139,8 +139,8 @@
     <rect>
      <x>40</x>
      <y>220</y>
-     <width>54</width>
-     <height>12</height>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
