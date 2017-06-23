@@ -136,7 +136,6 @@ vector<Course> Db::searchCourseByName(QString name){
     QSqlQuery query;
     qDebug()<<name;
     query.prepare("SELECT * FROM course WHERE name LIKE :name ;");
-//    query.bindValue(0,name);
     query.bindValue(":name","%"+name+"%");
     qDebug()<<getLastExecutedQuery(query);
     query.exec();
@@ -185,8 +184,32 @@ vector<Student> Db::searchStudent(){
     QSqlQuery query("SELECT * FROM student;");
     return queryToStudentVector(query);
 }
-
-
+vector<Student> Db::searchStudentById(int id){
+    qDebug()<<"Running Db::searchStudentById(int id)";
+    QSqlQuery query;
+    query.prepare("SELECT * FROM student WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.exec();
+    return queryToStudentVector(query);
+}
+vector<Student> Db::searchStudentByName(QString name){
+    qDebug()<<"Running Db::searchStudentByName(QString name)";
+    QSqlQuery query;
+    query.prepare("SELECT * FROM student WHERE name LIKE :name ;");
+    query.bindValue(":name","%"+name+"%");
+    qDebug()<<getLastExecutedQuery(query);
+    query.exec();
+    return queryToStudentVector(query);
+}
+vector<Student> Db::searchStudentByType(QString type){
+    qDebug()<<"Running Db::searchStudentByName(QString type)";
+    QSqlQuery query;
+    query.prepare("SELECT * FROM student WHERE type = :type ;");
+    query.bindValue(":type",type);
+    qDebug()<<getLastExecutedQuery(query);
+    query.exec();
+    return queryToStudentVector(query);
+}
 
 /*
  * Test Functions

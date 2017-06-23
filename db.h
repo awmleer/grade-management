@@ -25,6 +25,9 @@ namespace Db {
     bool deleteCourse(int id);
 
     vector<Student> searchStudent();
+    vector<Student> searchStudentById(int id);
+    vector<Student> searchStudentByName(QString name);
+    vector<Student> searchStudentByType(QString type);
 
     vector<Student> test();
     bool testInsert();

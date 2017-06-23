@@ -33,6 +33,10 @@ int main(int argc, char *argv[])
 
     /*some tests*/
     Db::searchStudent();
+    Db::searchStudentById(1001);
+    Db::searchStudentByName("Bart");
+    Db::searchStudentByType("master");
+
 //    Db::searchCourseById(2);
 //    Db::searchCourseByName("p");
 //    vector<Course> myCourses = Db::searchCourse();
