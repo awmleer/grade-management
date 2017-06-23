@@ -52,7 +52,7 @@ bool Db::init(){
                               "studentId INTEGER NOT NULL,"
                               "courseId INTEGER NOT NULL,"
                               "takeTime VARCHAR(20),"
-                              "grade INTEGER,"
+                              "score INTEGER,"
                               "PRIMARY KEY (studentId, courseId),"
                               "FOREIGN KEY (courseId) REFERENCES course(id),"
                               "FOREIGN KEY (studentId) REFERENCES student(id)"
@@ -111,6 +111,24 @@ vector<Student> Db::queryToStudentVector(QSqlQuery &query){
     }
     qDebug() <<"Got "<<students.size()<<" students";
     return students;
+}
+vector<Grade> Db::queryToGradeVector(QSqlQuery &query){
+    vector<Grade> grades;
+    int studentIdNo = query.record().indexOf("studentId");
+    int courseIdNo = query.record().indexOf("courseId");
+    int takeTimeNo = query.record().indexOf("takeTime");
+    int scoreNo = query.record().indexOf("score");
+    while (query.next()){
+        Grade grade(
+                    query.value(studentIdNo).toInt(),
+                    query.value(courseIdNo).toInt(),
+                    query.value(takeTimeNo).toString(),
+                    query.value(scoreNo).toInt()
+                    );
+        grades.push_back(grade);
+    }
+    qDebug() <<"Got "<<grades.size()<<" grades";
+    return grades;
 }
 
 
@@ -253,6 +271,7 @@ bool Db::deleteStudent(int id){
  * Test Functions
 */
 
+/*
 bool Db::testInsert(){
     QSqlQuery query;
     query.prepare("INSERT INTO student (id, name, type, enrollmentYear) "
@@ -317,3 +336,4 @@ bool Db::testDeleteall(){
     }
     return SQLdeleteall.exec();
 }
+*/

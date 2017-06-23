@@ -54,7 +54,7 @@ void selectcourse::on_pushButton_clicked()
     QStringList header;
     header << "id" << "name" << "description";
     ui->tableWidget->setHorizontalHeaderLabels(header);
-    for (int i = 0;i < selCourseRes.size();i++) {
+    for (unsigned i = 0;i < selCourseRes.size();i++) {
         ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
         ui->tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
         ui->tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));

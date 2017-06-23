@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS grade (
   studentId INTEGER NOT NULL,
   courseId INTEGER NOT NULL,
   takeTime VARCHAR(20), -- eg. '2016first', '2015second'
-  grade INTEGER,
+  score INTEGER,
   PRIMARY KEY (studentId, courseId),
   FOREIGN KEY (courseId) REFERENCES course(id),
   FOREIGN KEY (studentId) REFERENCES student(id)
