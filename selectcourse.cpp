@@ -60,3 +60,26 @@ void selectcourse::on_pushButton_clicked()
     ui->tableWidget->show();
 
 }
+
+void selectcourse::on_pushButton_3_clicked()
+{
+    vector<Course> selCourseRes;
+    selCourseRes = Course::all();
+
+    ui->tableWidget->setRowCount(selCourseRes.size());
+    ui->tableWidget->setColumnCount(3);
+
+
+    QStringList header;
+    header << "id" << "name" << "description";
+    ui->tableWidget->setHorizontalHeaderLabels(header);
+    for (unsigned i = 0;i < selCourseRes.size();i++) {
+        ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
+        ui->tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
+        ui->tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
+
+
+    }
+
+    ui->tableWidget->show();
+}
