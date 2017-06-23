@@ -65,6 +65,19 @@ bool Db::init(){
 }
 
 
+QString Db::getLastExecutedQuery(const QSqlQuery& query)
+{
+    QString str = query.lastQuery();
+    QMapIterator<QString, QVariant> it(query.boundValues());
+    while (it.hasNext())
+    {
+        it.next();
+        str.replace(it.key(),it.value().toString());
+    }
+    return str;
+}
+
+
 vector<Course> Db::queryToCourseVector(QSqlQuery &query){
     vector<Course> courses;
     int idNo = query.record().indexOf("id");
@@ -89,11 +102,23 @@ vector<Course> Db::searchCourse(){
     return queryToCourseVector(query);
 }
 
-vector<Course> Db::searchCourse(int id){
-    qDebug()<<"Running Db::searchCourse(int id)";
+vector<Course> Db::searchCourseById(int id){
+    qDebug()<<"Running Db::searchCourseById(int id)";
     QSqlQuery query;
     query.prepare("SELECT * FROM course WHERE id = :id ;");
     query.bindValue(":id",id);
+    query.exec();
+    return queryToCourseVector(query);
+}
+
+vector<Course> Db::searchCourseByName(QString name){
+    qDebug()<<"Running Db::searchCourseByName(QString name)";
+    QSqlQuery query;
+    qDebug()<<name;
+    query.prepare("SELECT * FROM course WHERE name LIKE :name ;");
+//    query.bindValue(0,name);
+    query.bindValue(":name","%"+name+"%");
+    qDebug()<<getLastExecutedQuery(query);
     query.exec();
     return queryToCourseVector(query);
 }

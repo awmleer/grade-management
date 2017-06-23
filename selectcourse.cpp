@@ -28,7 +28,7 @@ void selectcourse::on_buttonBox_accepted()
 
     QString idStr =  ui->CourseId->text();
     int id =idStr.toInt();
-    vector<Course> selCourseRes = Db::searchCourse(id);
+    vector<Course> selCourseRes = Db::searchCourseById(id);
 
     QTableWidget * tableWidget = new QTableWidget(selCourseRes.size(),4);
     //tableWidget->setWindowTitle("Student result display");

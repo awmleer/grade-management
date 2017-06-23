@@ -32,20 +32,19 @@ int main(int argc, char *argv[])
 
 
     /*some tests*/
-    Db::searchCourse(1);
+    Db::searchCourseById(2);
+    Db::searchCourseByName("p");
     vector<Course> myCourses = Db::searchCourse();
+//    Course::create("oop","first try!");
     if (myCourses.size()>0){
-        qDebug()<<myCourses.size();
-        myCourses[0].setName("xxx");
-        qDebug()<<myCourses[0].getName();
-        myCourses[0].save();
+//        myCourses[0].remove();
+//        qDebug()<<myCourses.size();
+//        myCourses[0].setName("xxx");
+//        qDebug()<<myCourses[0].getName();
+//        myCourses[0].save();
     }
 
 
-//    Db::testInsert();
-//    Db::testUpdate();
-//    Db::testDelete();
-//    Db::testDeleteall();
     w.setWindowTitle("学生成绩管理系统");
     w.show();
 
