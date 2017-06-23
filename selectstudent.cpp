@@ -7,6 +7,7 @@ selectstudent::selectstudent(QWidget *parent) :
     ui(new Ui::selectstudent)
 {
     ui->setupUi(this);
+    QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
 }
 
 selectstudent::~selectstudent()
@@ -16,7 +17,7 @@ selectstudent::~selectstudent()
 
 void selectstudent::on_pushButton_clicked()
 {
-    this->hide();
+    //this->hide();
     return;
 }
 
@@ -82,18 +83,6 @@ void selectstudent::on_pushButton_3_clicked()
 
 }
 
-void selectstudent::on_removeButtom_clicked()
-{
-    int i = ui->tableWidget->currentRow();
-    vector<Student>::iterator i_student = selStudentRes.begin();
-    for (int j = 0;j < i;j++)
-        i_student++;
-    ui->tableWidget->removeRow(i);
-    selStudentRes[i].remove();
-    selStudentRes.erase(i_student);
-
-    return;
-}
 
 void selectstudent::on_saveButton_clicked()
 {
@@ -109,4 +98,17 @@ void selectstudent::on_saveButton_clicked()
     selStudentRes[i].setEnrollmentYear(year.toInt());
     selStudentRes[i].save();
 
+}
+
+void selectstudent::on_removeButton_clicked()
+{
+    int i = ui->tableWidget->currentRow();
+    vector<Student>::iterator i_student = selStudentRes.begin();
+    for (int j = 0;j < i;j++)
+        i_student++;
+    ui->tableWidget->removeRow(i);
+    selStudentRes[i].remove();
+    selStudentRes.erase(i_student);
+
+    return;
 }

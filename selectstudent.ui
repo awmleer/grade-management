@@ -180,6 +180,32 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/blue/blue10.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="removeButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>240</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>remove</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>290</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </widget>
   <zorder>label_6</zorder>
   <zorder>tableWidget</zorder>
   <zorder>pushButton</zorder>
@@ -194,6 +220,8 @@
   <zorder>pushButton_2</zorder>
   <zorder>label_5</zorder>
   <zorder>pushButton_3</zorder>
+  <zorder>removeButton</zorder>
+  <zorder>saveButton</zorder>
  </widget>
  <resources/>
  <connections/>

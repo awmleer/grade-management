@@ -11,6 +11,7 @@ selectcourse::selectcourse(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Course selection"));
+    QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
 }
 
 selectcourse::~selectcourse()
@@ -110,20 +111,24 @@ void selectcourse::on_pushButton_4_clicked()
     return;
 }
 
-void selectcourse::on_removeButton_clicked()
+
+
+
+
+void selectcourse::on_removeButton_2_clicked()
 {
     int i = ui->tableWidget->currentRow();
-    vector<Course>::iterator i_course = selCourseRes.begin();
-    for (int j = 0;j < i;j++)
-        i_course++;
-    ui->tableWidget->removeRow(i);
-    selCourseRes[i].remove();
-    selCourseRes.erase(i_course);
+       vector<Course>::iterator i_course = selCourseRes.begin();
+       for (int j = 0;j < i;j++)
+           i_course++;
+       ui->tableWidget->removeRow(i);
+       selCourseRes[i].remove();
+       selCourseRes.erase(i_course);
 
-    return;
+       return;
 }
 
-void selectcourse::on_saveChangeButtom_clicked()
+void selectcourse::on_saveButton_clicked()
 {
     int i = ui->tableWidget->currentRow();
 

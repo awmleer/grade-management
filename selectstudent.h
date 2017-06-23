@@ -24,9 +24,9 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void on_removeButtom_clicked();
-
     void on_saveButton_clicked();
+
+    void on_removeButton_clicked();
 
 private:
     Ui::selectstudent *ui;

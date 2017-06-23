@@ -28,9 +28,9 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_removeButton_clicked();
+    void on_removeButton_2_clicked();
 
-    void on_saveChangeButtom_clicked();
+    void on_saveButton_clicked();
 
 private:
     Ui::selectcourse *ui;
