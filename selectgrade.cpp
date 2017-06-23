@@ -133,5 +133,23 @@ void selectgrade::on_removeButtom_clicked()
 
 void selectgrade::on_saveButtom_clicked()
 {
+    int i = ui->tableWidget->currentRow();
+
+    ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selGradeRes[i].getId(),10)));
+    ui->tableWidget->setItem(i,1,new QTableWidgetItem(QString::number(selGradeRes[i].getStudentId(),10)));
+    ui->tableWidget->setItem(i,2,new QTableWidgetItem(QString::number(selGradeRes[i].getCourseId(),10)));
+    ui->tableWidget->setItem(i,3,new QTableWidgetItem(selGradeRes[i].getTakeTime()));
+    ui->tableWidget->setItem(i,4,new QTableWidgetItem(QString::number(selGradeRes[i].getScore(),10)));
+
+    QString tempStr;
+
+    selGradeRes[i].setTakeTime(ui->tableWidget->item(i,3)->text());
+    selGradeRes[i].save();
+
+    selGradeRes[i].setScore((tempStr = ui->tableWidget->item(i,4)->text()).toInt());
+    selGradeRes[i].save();
+
+
+    return;
 
 }

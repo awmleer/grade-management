@@ -74,7 +74,7 @@ void selectstudent::on_pushButton_3_clicked()
         ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selStudentRes[i].getId(),10)));
         ui->tableWidget->setItem(i,1,new QTableWidgetItem(selStudentRes[i].getName()));
         ui->tableWidget->setItem(i,2,new QTableWidgetItem(selStudentRes[i].getType()));
-        ui->tableWidget->setItem(i,3,new QTableWidgetItem(selStudentRes[i].getEnrollmentYear()));
+        ui->tableWidget->setItem(i,3,new QTableWidgetItem(QString::number(selStudentRes[i].getEnrollmentYear(),10)));
 
     }
 
@@ -97,5 +97,16 @@ void selectstudent::on_removeButtom_clicked()
 
 void selectstudent::on_saveButton_clicked()
 {
+    int i = ui->tableWidget->currentRow();
+
+    selStudentRes[i].setName(ui->tableWidget->item(i,1)->text());
+    selStudentRes[i].save();
+
+    selStudentRes[i].setType(ui->tableWidget->item(i,2)->text());
+    selStudentRes[i].save();
+
+    QString year = ui->tableWidget->item(i,3)->text();
+    selStudentRes[i].setEnrollmentYear(year.toInt());
+    selStudentRes[i].save();
 
 }
