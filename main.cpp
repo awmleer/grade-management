@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 
 
     /*some tests*/
+//    qDebug()<<Course::create("name","d");
 //    vector<Grade> grades = Grade::all();
 //    qDebug()<<grades[0].remove();
 //    Grade::create(1003,1,"2016first",98);
