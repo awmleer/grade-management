@@ -35,6 +35,17 @@ namespace Db {
     int insertStudent(int id, QString name, QString type, int enrollmentYear);
     bool deleteStudent(int id);
 
+    vector<Grade> searchGrade();
+    vector<Grade> searchGradeById(int id);
+    vector<Grade> searchGradeByCourseId(int courseId);
+    vector<Grade> searchGradeByStudentId(int studentId);
+    vector<Grade> searchGradeByTakeTime(QString takeTime);
+    vector<Grade> searchGradeByScore(int min, int max);
+
+    bool updateGrade(int id, QString takeTime, int score);
+    int insertGrade(int studentId, int courseId, QString takeTime, int score);
+    bool deleteGrade(int id);
+
 }
 
 

@@ -49,11 +49,11 @@ bool Db::init(){
     }
     //create grade table
     qDebug() << query.prepare("CREATE TABLE IF NOT EXISTS grade ("
+                              "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                               "studentId INTEGER NOT NULL,"
                               "courseId INTEGER NOT NULL,"
                               "takeTime VARCHAR(20),"
                               "score INTEGER,"
-                              "PRIMARY KEY (studentId, courseId),"
                               "FOREIGN KEY (courseId) REFERENCES course(id),"
                               "FOREIGN KEY (studentId) REFERENCES student(id)"
                               ");"
@@ -182,6 +182,7 @@ int Db::insertCourse(QString name, QString description){
         return -1;
     }
     query.prepare("select max(id) from grade;");
+    query.exec();
     query.next();
     return query.value(0).toInt();
 }
@@ -257,11 +258,95 @@ int Db::insertStudent(int id, QString name, QString type, int enrollmentYear){
 }
 bool Db::deleteStudent(int id){
     QSqlQuery query;
-    query.prepare("DELETE FROM student WHERE id = :id");
+    query.prepare("DELETE FROM student WHERE id = :id ;");
     query.bindValue(":id",id);
     return query.exec();
 }
 
+
+
+/*
+ * Grade Search
+*/
+vector<Grade> Db::searchGrade(){
+    QSqlQuery query("SELECT * FROM grade;");
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeById(int id){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByCourseId(int courseId){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE courseId = :courseId ;");
+    query.bindValue(":courseId",courseId);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByStudentId(int studentId){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE studentId = :studentId ;");
+    query.bindValue(":studentId",studentId);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByTakeTime(QString takeTime){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE takeTime = :takeTime ;");
+    query.bindValue(":takeTime",takeTime);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByScore(int min, int max){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE score >= :min AND score <= :max ;");
+    query.bindValue(":min",min);
+    query.bindValue(":max",max);
+    query.exec();
+    return queryToGradeVector(query);
+}
+
+
+
+/*
+ * Grade Operation
+*/
+bool Db::updateGrade(int id, QString takeTime, int score){
+    QSqlQuery query;
+    query.prepare("UPDATE grade SET takeTime = :takeTime, score = :score WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.bindValue(":takeTime",takeTime);
+    query.bindValue(":score",score);
+    return query.exec();
+}
+
+int Db::insertGrade(int studentId, int courseId, QString takeTime, int score){
+    QSqlQuery query;
+    query.prepare("INSERT INTO grade (studentId, courseId, takeTime, score) "
+                  "VALUES ( :studentId, :courseId, :takeTime, :score );"
+                  );
+    query.bindValue(":studentId",studentId);
+    query.bindValue(":courseId",courseId);
+    query.bindValue(":takeTime",takeTime);
+    query.bindValue(":score",score);
+    if(query.exec()==false){
+        return -1;
+    }
+    query.prepare("select max(id) from grade;");
+    query.exec();
+    query.next();
+    return query.value(0).toInt();
+}
+
+bool Db::deleteGrade(int id){
+    QSqlQuery query;
+    query.prepare("DELETE FROM grade WHERE id = :id");
+    query.bindValue(":id",id);
+    return query.exec();
+}
 
 
 
