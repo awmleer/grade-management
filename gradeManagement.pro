@@ -62,6 +62,7 @@ FORMS += \
     selectstudent.ui
 
 RESOURCES += \
-    welcome.qrc
+    welcome.qrc \
+    house.qrc
 
 DISTFILES +=

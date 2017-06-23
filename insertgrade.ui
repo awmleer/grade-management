@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>574</width>
-    <height>427</height>
+    <height>413</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>350</y>
+     <x>30</x>
+     <y>310</y>
      <width>341</width>
      <height>51</height>
     </rect>
@@ -160,6 +160,32 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-40</y>
+     <width>641</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/blue/blue9.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_7</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>label</zorder>
+  <zorder>studentId</zorder>
+  <zorder>courseId</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>takeTime</zorder>
+  <zorder>score</zorder>
+  <zorder>label_5</zorder>
+  <zorder>insertGrade</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_6</zorder>
  </widget>
  <resources/>
  <connections>

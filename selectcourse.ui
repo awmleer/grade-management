@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>554</width>
-    <height>421</height>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -65,7 +65,7 @@
      <x>10</x>
      <y>190</y>
      <width>451</width>
-     <height>221</height>
+     <height>311</height>
     </rect>
    </property>
   </widget>
@@ -86,7 +86,7 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>360</y>
+     <y>450</y>
      <width>81</width>
      <height>51</height>
     </rect>
@@ -147,6 +147,31 @@
     <string>Save changes</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-80</y>
+     <width>771</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/blue/blue4.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
+  <zorder>CourseId</zorder>
+  <zorder>CourseName</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>tableWidget</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>pushButton_4</zorder>
  </widget>
  <resources/>
  <connections/>
