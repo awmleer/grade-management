@@ -56,8 +56,6 @@ int main(int argc, char *argv[])
     w.setWindowTitle("学生成绩管理系统");
     w.show();
 
-    vector<Student> res = Db::test();
-
 
    // QLabel label(&w);
     //label.setGeometry(100,200,600,100);

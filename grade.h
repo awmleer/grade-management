@@ -5,7 +5,7 @@
 
 class Grade{
 public:
-    Grade(int studentId, int courseId, QString takeTime, int grade);
+    Grade(int studentId, int courseId, QString takeTime, int score);
     int getStudentId(){
         return studentId;
     }
@@ -16,20 +16,20 @@ public:
         return takeTime;
     }
     void setTakeTime(QString takeTime);
-    int getGrade(){
-        return grade;
+    int getScore(){
+        return score;
     }
-    void setGrade(int grade);
+    void setScore(int score);
 
     bool save();
-    static int create(int studentId, int courseId, QString takeTime, int grade);//returns the courseId if success, else returns -1
+    static int create(int studentId, int courseId, QString takeTime, int score);//returns the courseId if success, else returns -1
     bool remove();
 
 private:
     int studentId;
     int courseId;
     QString takeTime;
-    int grade;
+    int score;
 };
 
 #endif // GRADE_H

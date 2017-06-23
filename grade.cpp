@@ -1,14 +1,14 @@
 #include "grade.h"
 
-Grade::Grade(int studentId, int courseId, QString takeTime, int grade)
-    :studentId(studentId),courseId(courseId),takeTime(takeTime),grade(grade){}
+Grade::Grade(int studentId, int courseId, QString takeTime, int score)
+    :studentId(studentId),courseId(courseId),takeTime(takeTime),score(score){}
 
 void Grade::setTakeTime(QString takeTime){
     this->takeTime=takeTime;
 }
 
-void Grade::setGrade(int grade){
-    this->grade=grade;
+void Grade::setScore(int score){
+    this->score=score;
 }
 
 

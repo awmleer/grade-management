@@ -3,6 +3,7 @@
 #include <QtSql>
 #include "student.h"
 #include "course.h"
+#include "grade.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ namespace Db {
 
     vector<Course> queryToCourseVector(QSqlQuery &query);
     vector<Student> queryToStudentVector(QSqlQuery &query);
+    vector<Grade> queryToGradeVector(QSqlQuery &query);
 
 
     vector<Course> searchCourse();
@@ -33,11 +35,6 @@ namespace Db {
     int insertStudent(int id, QString name, QString type, int enrollmentYear);
     bool deleteStudent(int id);
 
-    vector<Student> test();
-    bool testInsert();
-    bool testUpdate();
-    bool testDelete();
-    bool testDeleteall();
 }
 
 
