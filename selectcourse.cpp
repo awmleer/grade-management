@@ -11,7 +11,6 @@ selectcourse::selectcourse(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Course selection"));
-    QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
 }
 
 selectcourse::~selectcourse()
@@ -26,6 +25,10 @@ void selectcourse::on_buttonBox_accepted()
 
 void selectcourse::on_pushButton_clicked()
 {
+    if ((!ui->CourseId->text().isEmpty()+!ui->CourseName->text().isEmpty())>1) {
+         QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
+        return;
+    }
     if (!ui->CourseId->text().isEmpty()) {
 
         QString idStr =  ui->CourseId->text();
@@ -40,6 +43,10 @@ void selectcourse::on_pushButton_clicked()
     else {
         QMessageBox::warning(this,tr("Input illegal!"),tr("Please complete the course id or course name"));
         return;
+    }
+
+    if (!selCourseRes.size()) {
+         QMessageBox::warning(this,tr("Search result"),tr("No such record is found."));
     }
 
     ui->tableWidget->setRowCount(selCourseRes.size());
@@ -66,6 +73,10 @@ void selectcourse::on_pushButton_clicked()
 void selectcourse::on_pushButton_3_clicked()
 {
     selCourseRes = Course::all();
+
+    if (!selCourseRes.size()) {
+         QMessageBox::warning(this,tr("Search result"),tr("No such record is found."));
+    }
 
     ui->tableWidget->setRowCount(selCourseRes.size());
     ui->tableWidget->setColumnCount(3);

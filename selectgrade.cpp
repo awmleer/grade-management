@@ -7,7 +7,6 @@ selectgrade::selectgrade(QWidget *parent) :
     ui(new Ui::selectgrade)
 {
     ui->setupUi(this);
-    QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
 }
 
 selectgrade::~selectgrade()
@@ -23,6 +22,10 @@ void selectgrade::on_pushButton_clicked()
 
 void selectgrade::on_searchButton_clicked()
 {
+    if ((!ui->Id->text().isEmpty()+!ui->studentId->text().isEmpty()+!ui->courseId->text().isEmpty()+!ui->takeTime->text().isEmpty()+(!ui->minScore->text().isEmpty()&&!ui->maxScore->text().isEmpty()))>1) {
+         QMessageBox::warning(this,tr("Hint"),tr("You should only input one search condition."));
+        return;
+    }
 
     if (!ui->Id->text().isEmpty()) {
 
@@ -57,6 +60,10 @@ void selectgrade::on_searchButton_clicked()
         return;
     }
 
+    if (!selGradeRes.size()) {
+         QMessageBox::warning(this,tr("Search result"),tr("No such record is found."));
+    }
+
     ui->tableWidget->setRowCount(selGradeRes.size());
     ui->tableWidget->setColumnCount(5);
 
@@ -82,6 +89,9 @@ void selectgrade::on_searchAllbutton_clicked()
     ui->tableWidget->setRowCount(selGradeRes.size());
     ui->tableWidget->setColumnCount(5);
 
+    if (!selGradeRes.size()) {
+         QMessageBox::warning(this,tr("Search result"),tr("No such record is found."));
+    }
 
 
 
