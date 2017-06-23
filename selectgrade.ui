@@ -17,17 +17,17 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>220</y>
      <width>551</width>
-     <height>321</height>
+     <height>241</height>
     </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>10</y>
+     <x>10</x>
+     <y>90</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -39,8 +39,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>50</y>
+     <x>10</x>
+     <y>130</y>
      <width>171</width>
      <height>31</height>
     </rect>
@@ -53,7 +53,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>50</y>
      <width>171</width>
      <height>31</height>
     </rect>
@@ -62,31 +62,31 @@
     <string>Student ID</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>50</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>10</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="takeTime">
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>10</y>
+     <y>130</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="courseId">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>90</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="studentId">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>50</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -105,40 +105,99 @@
     <string>Quit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QPushButton" name="searchButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>390</x>
      <y>50</y>
-     <width>171</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Student Name</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>50</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>100</y>
      <width>171</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Id">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>10</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Score </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="searchAllbutton">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>130</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search All</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="minScore">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>170</y>
+     <width>60</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="maxScore">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>170</y>
+     <width>60</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>170</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>_____-------------------------</string>
    </property>
   </widget>
  </widget>

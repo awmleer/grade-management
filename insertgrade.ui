@@ -39,10 +39,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Add New Course</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="studentId">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -52,7 +52,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="courseId">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -66,13 +66,13 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>69</y>
+     <y>70</y>
      <width>81</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>ID</string>
+    <string>Student ID</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -85,37 +85,24 @@
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string>Course ID</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>531</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Remove Original Course</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="takeTime">
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>210</y>
+     <y>170</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="score">
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>260</y>
+     <y>220</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -125,29 +112,16 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>210</y>
+     <y>170</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>ID</string>
+    <string>Take Time </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>260</y>
-     <width>141</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Name</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="insertGrade">
    <property name="geometry">
     <rect>
      <x>400</x>
@@ -157,20 +131,33 @@
     </rect>
    </property>
    <property name="text">
-    <string>Insert</string>
+    <string>Add</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>40</x>
      <y>220</y>
-     <width>121</width>
-     <height>51</height>
+     <width>54</width>
+     <height>12</height>
     </rect>
    </property>
    <property name="text">
-    <string>Insert</string>
+    <string>Score </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>270</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

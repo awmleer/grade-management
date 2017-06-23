@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>190</y>
      <width>531</width>
-     <height>291</height>
+     <height>241</height>
     </rect>
    </property>
   </widget>
@@ -36,7 +36,7 @@
     <string>Quit</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="studentId">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -46,7 +46,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="studentName">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -56,7 +56,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="studentType">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -66,7 +66,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="stuedntYear">
    <property name="geometry">
     <rect>
      <x>490</x>
@@ -139,6 +139,32 @@
    </property>
    <property name="text">
     <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>135</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search all </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>140</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search all</string>
    </property>
   </widget>
  </widget>

@@ -51,7 +51,7 @@ void insertcourse::on_pushButton_2_clicked()
 
         if (selCourseRes.size()) {
             if (selCourseRes[0].remove())
-                 QMessageBox::warning(this,tr("Removal succeed"),tr("Please input the course id"));
+                 QMessageBox::warning(this,tr("Removal succeed"),tr("The course has been eliminated"));
         }
         else
             QMessageBox::warning(this,tr("Removal failed"),tr("Please make sure the course exists."));

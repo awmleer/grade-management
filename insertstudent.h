@@ -2,6 +2,7 @@
 #define INSERTSTUDENT_H
 
 #include <QDialog>
+#include "student.h"
 
 namespace Ui {
 class insertStudent;
