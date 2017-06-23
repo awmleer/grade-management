@@ -30,26 +30,21 @@ void selectcourse::on_pushButton_clicked()
 
         QString idStr =  ui->CourseId->text();
         int id =idStr.toInt();
-        selCourseRes = Db::searchCourseById(id);
+        selCourseRes = Course::searchById(id);
 
     }
 
     else if (!ui->CourseName->text().isEmpty()) {
-        selCourseRes = Db::searchCourseByName(ui->CourseName->text());
+        selCourseRes = Course::searchByName(ui->CourseName->text());
     }
     else {
         QMessageBox::warning(this,tr("Input illegal!"),tr("Please complete the course id or course name"));
         return;
     }
 
-
-    //QTableWidget * tableWidget = new QTableWidget();
     ui->tableWidget->setRowCount(selCourseRes.size());
     ui->tableWidget->setColumnCount(3);
-    //tableWidget->setWindowTitle("Student result display");
-    //this->setCentralWidget(tableWidget);
 
-    //tableWidget->resize(900,300);
 
     QStringList header;
     header << "id" << "name" << "description";
