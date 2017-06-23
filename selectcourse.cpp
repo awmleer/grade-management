@@ -25,7 +25,6 @@ void selectcourse::on_buttonBox_accepted()
 
 void selectcourse::on_pushButton_clicked()
 {
-    vector<Course> selCourseRes;
     if (!ui->CourseId->text().isEmpty()) {
 
         QString idStr =  ui->CourseId->text();
@@ -63,7 +62,6 @@ void selectcourse::on_pushButton_clicked()
 
 void selectcourse::on_pushButton_3_clicked()
 {
-    vector<Course> selCourseRes;
     selCourseRes = Course::all();
 
     ui->tableWidget->setRowCount(selCourseRes.size());
@@ -82,4 +80,30 @@ void selectcourse::on_pushButton_3_clicked()
     }
 
     ui->tableWidget->show();
+}
+
+void selectcourse::on_pushButton_2_clicked()
+{
+    this->hide();
+    return;
+}
+
+void selectcourse::on_pushButton_4_clicked()
+{
+    //save the necessary changes
+    for (int i = 0;i < selCourseRes.size();i++) {
+        if (selCourseRes[i].getName() != ui->tableWidget->itemAt(i,1)->text()) {
+            selCourseRes[i].setName(ui->tableWidget->itemAt(i,1)->text());
+            selCourseRes[i].save();
+            qDebug() << ui->tableWidget->itemAt(i,1)->text();
+        }
+
+        if (selCourseRes[i].getDescription() != ui->tableWidget->itemAt(i,2)->text()) {
+            selCourseRes[i].setDescription(ui->tableWidget->itemAt(i,2)->text());
+            selCourseRes[i].save();
+        }
+
+    }
+
+    return;
 }

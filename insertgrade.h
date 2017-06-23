@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::insertgrade *ui;
+
 };
 
 #endif // INSERTGRADE_H
