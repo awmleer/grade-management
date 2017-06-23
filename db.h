@@ -29,6 +29,10 @@ namespace Db {
     vector<Student> searchStudentByName(QString name);
     vector<Student> searchStudentByType(QString type);
 
+    bool updateStudent(int id, QString name, QString type, int enrollmentYear);
+    int insertStudent(int id, QString name, QString type, int enrollmentYear);
+    bool deleteStudent(int id);
+
     vector<Student> test();
     bool testInsert();
     bool testUpdate();

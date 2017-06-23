@@ -212,6 +212,44 @@ vector<Student> Db::searchStudentByType(QString type){
 }
 
 /*
+ * Student Operation
+*/
+bool Db::updateStudent(int id, QString name, QString type, int enrollmentYear){
+    QSqlQuery query;
+    query.prepare("UPDATE student SET name = :name, type = :type, enrollmentYear = :enrollmentYear WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.bindValue(":name",name);
+    query.bindValue(":type",type);
+    query.bindValue(":enrollmentYear",enrollmentYear);
+    return query.exec();
+}
+int Db::insertStudent(int id, QString name, QString type, int enrollmentYear){
+    QSqlQuery query;
+    query.prepare("INSERT INTO student (id, name, type, enrollmentYear) "
+                  "VALUES ( :id, :name, :type, :enrollmentYear );"
+                  );
+    query.bindValue(":id",id);
+    query.bindValue(":name",name);
+    query.bindValue(":type",type);
+    query.bindValue(":enrollmentYear",enrollmentYear);
+    if(query.exec()==false){
+        return -1;
+    }
+    return id;
+}
+bool Db::deleteStudent(int id){
+    QSqlQuery query;
+    query.prepare("DELETE FROM student WHERE id = :id");
+    query.bindValue(":id",id);
+    return query.exec();
+}
+
+
+
+
+
+
+/*
  * Test Functions
 */
 
