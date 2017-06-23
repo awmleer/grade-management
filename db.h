@@ -35,6 +35,11 @@ namespace Db {
     int insertStudent(int id, QString name, QString type, int enrollmentYear);
     bool deleteStudent(int id);
 
+
+    bool updateGrade(int id, QString takeTime, int score);
+    int insertGrade(int studentId, int courseId, QString takeTime, int score);
+    bool deleteGrade(int id);
+
 }
 
 

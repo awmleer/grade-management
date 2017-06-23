@@ -6,6 +6,9 @@
 class Grade{
 public:
     Grade(int studentId, int courseId, QString takeTime, int score);
+    int getId(){
+        return id;
+    }
     int getStudentId(){
         return studentId;
     }
@@ -26,6 +29,7 @@ public:
     bool remove();
 
 private:
+    int id;
     int studentId;
     int courseId;
     QString takeTime;

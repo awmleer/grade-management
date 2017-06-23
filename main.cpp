@@ -32,9 +32,10 @@ int main(int argc, char *argv[])
 
 
     /*some tests*/
-    Student::create(1003,"小王","master",2016);
-    Course::all();
-    Student::all();
+    Grade::create(1003,1,"2016first",98);
+//    Student::create(1003,"小王","master",2016);
+//    Course::all();
+//    Student::all();
 //    Db::searchStudent();
 //    Db::searchStudentById(1001);
 //    Db::searchStudentByName("Bart");

@@ -21,11 +21,11 @@ CREATE TABLE IF NOT EXISTS course (
 );
 
 CREATE TABLE IF NOT EXISTS grade (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   studentId INTEGER NOT NULL,
   courseId INTEGER NOT NULL,
   takeTime VARCHAR(20), -- eg. '2016first', '2015second'
   score INTEGER,
-  PRIMARY KEY (studentId, courseId),
   FOREIGN KEY (courseId) REFERENCES course(id),
   FOREIGN KEY (studentId) REFERENCES student(id)
 );
