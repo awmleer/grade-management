@@ -39,7 +39,7 @@ void selectcourse::on_buttonBox_accepted()
     QStringList header;
     header << "id" << "name" << "description";
     tableWidget->setHorizontalHeaderLabels(header);
-    for (int i = 0;i < selCourseRes.size();i++) {
+    for (unsigned i = 0;i < selCourseRes.size();i++) {
         tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
         tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
         tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
