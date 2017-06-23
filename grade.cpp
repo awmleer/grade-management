@@ -13,6 +13,14 @@ void Grade::setScore(int score){
 }
 
 
+Student Grade::fetchStudent(){
+    return Db::searchStudentById(studentId)[0];
+}
+Course Grade::fetchCourse(){
+    return Db::searchCourseById(courseId)[0];
+}
+
+
 bool Grade::save(){
     return Db::updateGrade(id,takeTime,score);
 }
