@@ -178,5 +178,75 @@ private:
 
 
 
+## UI界面设计
+
+UI界面一共分为七块：**主界面**、**课程查找**、**课程添加**、**学生查找**、**学生添加**、**成绩查找**、**成绩添加**。
+
+### 主界面MainWindow
+
+主界面是六个主要功能的入口，为了友好，我们插入了一张欢迎的图片。
+
+最上栏我们设置了课程管理、学生管理、成绩管理三大类。
+
+![mainwindow](./pictures/mainwindow.png)
+
+每个大类都可以有两个选项窗。
+
+![00](./pictures/00.png)
+
+第二栏可以直接点击到六项功能的任何一项
+
+### 课程查找CourseSelection
+
+**所有查找功能都会有提示，只能输入一个搜索条件，否则会出现错误！**
+
+![hint](./pictures/hint.png)
+
+进入课程查询界面，可以输入课程id或课程名，点击search即可在下方看到结果。
+
+如果是无条件查询，可以直接点击search all。
+
+![courseselection](./pictures/courseselection.png)
+
+### 课程管理CourseManagement
+
+在这里可以进行课程的增删。
+
+添加一门新的课程，需要输入课程名和课程描述，系统会自动分配课程号。
+
+如果需要删除一门课，输入课程的ID，点击remove，即可删除此门课。
+
+![courseinsert](./pictures/courseinsert.png)
+
+### 其他界面OtherWindows
+
+**学生查询、增删和成绩查询、增删大致相同，在此仅给出界面。**
+
+![studentsearch](./pictures/studentsearch.png)
+
+![studentinsert](./pictures/studentinsert.png)
+
+![gradeselect](./pictures/gradeselect.png)
+
+![gradeinsert](./pictures/gradeinsert.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
