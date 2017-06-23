@@ -24,9 +24,10 @@ private slots:
 
     void on_searchButton_clicked();
 
-    void on_removeButtom_clicked();
+    void on_removeButton_clicked();
 
-    void on_saveButtom_clicked();
+    void on_saveButton_clicked();
+
 
 private:
     Ui::selectgrade *ui;

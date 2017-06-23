@@ -118,7 +118,7 @@ void selectgrade::on_searchAllbutton_clicked()
 
 
 
-void selectgrade::on_removeButtom_clicked()
+void selectgrade::on_removeButton_clicked()
 {
     int i = ui->tableWidget->currentRow();
     vector<Grade>::iterator i_grade = selGradeRes.begin();
@@ -131,7 +131,7 @@ void selectgrade::on_removeButtom_clicked()
     return;
 }
 
-void selectgrade::on_saveButtom_clicked()
+void selectgrade::on_saveButton_clicked()
 {
     int i = ui->tableWidget->currentRow();
 
@@ -153,3 +153,4 @@ void selectgrade::on_saveButtom_clicked()
     return;
 
 }
+

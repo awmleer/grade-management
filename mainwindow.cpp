@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+    this->setWindowTitle("Student Grades Management");
+
 
     QMenuBar *mBar = menuBar();
 
