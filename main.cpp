@@ -4,6 +4,7 @@
 #include "db.h"
 #include "insertgrade.h"
 #include "student.h"
+#include "course.h"
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QDebug>
@@ -29,9 +30,17 @@ int main(int argc, char *argv[])
         qDebug() << "db init success";
     }
 
-    Db::searchCourse();
+
+    /*some tests*/
     Db::searchCourse(1);
-    Db::test();
+    vector<Course> myCourses = Db::searchCourse();
+    if (myCourses.size()>0){
+        qDebug()<<myCourses.size();
+        myCourses[0].setName("xxx");
+        qDebug()<<myCourses[0].getName();
+        myCourses[0].save();
+    }
+
 
 //    Db::testInsert();
 //    Db::testUpdate();

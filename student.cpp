@@ -9,14 +9,14 @@ Student::Student(int id, QString name, QString type, int enrollmentYear):
     id(id), name(name), type(type), enrollmentYear(enrollmentYear){}
 
 void Student::setName(QString name){
-    name=name;
+    this->name=name;
 }
 
 void Student::setType(QString type){
-    type=type;
+    this->type=type;
 }
 
 void Student::setEnrollmentYear(int enrollmentYear){
-    enrollmentYear=enrollmentYear;
+    this->enrollmentYear=enrollmentYear;
 }
 

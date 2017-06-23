@@ -5,11 +5,11 @@ Course::Course(int id, QString name, QString description):
     id(id), name(name), description(description){}
 
 void Course::setName(QString name){
-    name=name;
+    this->name=name;
 }
 
 void Course::setDescription(QString description){
-    description=description;
+    this->description=description;
 }
 
 bool Course::save(){

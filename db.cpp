@@ -80,7 +80,6 @@ vector<Course> Db::queryToCourseVector(QSqlQuery &query){
     }
     qDebug() <<"Got "<<courses.size()<<" courses";
     return courses;
-
 }
 
 
