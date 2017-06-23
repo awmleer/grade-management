@@ -63,9 +63,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>80</y>
+     <y>100</y>
      <width>451</width>
-     <height>201</height>
+     <height>181</height>
     </rect>
    </property>
   </widget>
@@ -86,13 +86,52 @@
    <property name="geometry">
     <rect>
      <x>470</x>
-     <y>250</y>
-     <width>641</width>
-     <height>455</height>
+     <y>260</y>
+     <width>75</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="text">
     <string>Quit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>75</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search all</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search by condition</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Search all</string>
    </property>
   </widget>
  </widget>
