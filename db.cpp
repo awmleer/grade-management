@@ -183,7 +183,7 @@ int Db::insertCourse(QString name, QString description){
     if(query.exec()==false){
         return -1;
     }
-    query.prepare("select max(id) from grade;");
+    query.prepare("SELECT max(id) FROM course;");
     query.exec();
     query.next();
     return query.value(0).toInt();
