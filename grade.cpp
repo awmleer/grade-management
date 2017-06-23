@@ -12,15 +12,15 @@ void Grade::setGrade(int grade){
 }
 
 
-bool Grade::save(){
+//bool Grade::save(){
 
-}
+//}
 
-int Grade::create(int studentId, int courseId, QString takeTime, int grade){
+//int Grade::create(int studentId, int courseId, QString takeTime, int grade){
 
-}
+//}
 
-bool Grade::remove(){
+//bool Grade::remove(){
 
-}
+//}
 
