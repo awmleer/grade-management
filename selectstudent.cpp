@@ -81,3 +81,21 @@ void selectstudent::on_pushButton_3_clicked()
     ui->tableWidget->show();
 
 }
+
+void selectstudent::on_removeButtom_clicked()
+{
+    int i = ui->tableWidget->currentRow();
+    vector<Student>::iterator i_student = selStudentRes.begin();
+    for (int j = 0;j < i;j++)
+        i_student++;
+    ui->tableWidget->removeRow(i);
+    selStudentRes[i].remove();
+    selStudentRes.erase(i_student);
+
+    return;
+}
+
+void selectstudent::on_saveButton_clicked()
+{
+
+}

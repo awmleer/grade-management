@@ -200,6 +200,32 @@
     <string>_____-------------------------</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="removeButtom">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>270</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>remove</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveButtom">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>320</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>

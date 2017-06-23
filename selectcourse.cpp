@@ -44,6 +44,8 @@ void selectcourse::on_pushButton_clicked()
     ui->tableWidget->setRowCount(selCourseRes.size());
     ui->tableWidget->setColumnCount(3);
 
+    ui->tableWidget->setSelectionBehavior ( QAbstractItemView::SelectRows);
+    ui->tableWidget->setSelectionMode ( QAbstractItemView::SingleSelection);
 
     QStringList header;
     header << "id" << "name" << "description";
@@ -104,6 +106,37 @@ void selectcourse::on_pushButton_4_clicked()
         }
 
     }
+
+    return;
+}
+
+void selectcourse::on_removeButton_clicked()
+{
+    int i = ui->tableWidget->currentRow();
+    vector<Course>::iterator i_course = selCourseRes.begin();
+    for (int j = 0;j < i;j++)
+        i_course++;
+    ui->tableWidget->removeRow(i);
+    selCourseRes[i].remove();
+    selCourseRes.erase(i_course);
+
+    return;
+}
+
+void selectcourse::on_saveChangeButtom_clicked()
+{
+    int i = ui->tableWidget->currentRow();
+
+
+    selCourseRes[i].setName(ui->tableWidget->itemAt(i,1)->text());
+    selCourseRes[i].save();
+    qDebug() << ui->tableWidget->itemAt(i,1)->text();
+
+
+
+    selCourseRes[i].setDescription(ui->tableWidget->itemAt(i,2)->text());
+    selCourseRes[i].save();
+
 
     return;
 }

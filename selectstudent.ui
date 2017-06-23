@@ -167,6 +167,32 @@
     <string>Search all</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="removeButtom">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>230</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>remove</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveButton">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>280</y>
+     <width>80</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>save changes</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

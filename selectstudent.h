@@ -24,6 +24,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_removeButtom_clicked();
+
+    void on_saveButton_clicked();
+
 private:
     Ui::selectstudent *ui;
     vector<Student> selStudentRes;

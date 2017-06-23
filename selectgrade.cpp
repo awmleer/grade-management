@@ -117,3 +117,21 @@ void selectgrade::on_searchAllbutton_clicked()
 }
 
 
+
+void selectgrade::on_removeButtom_clicked()
+{
+    int i = ui->tableWidget->currentRow();
+    vector<Grade>::iterator i_grade = selGradeRes.begin();
+    for (int j = 0;j < i;j++)
+        i_grade++;
+    ui->tableWidget->removeRow(i);
+    selGradeRes[i].remove();
+    selGradeRes.erase(i_grade);
+
+    return;
+}
+
+void selectgrade::on_saveButtom_clicked()
+{
+
+}
