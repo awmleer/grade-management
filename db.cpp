@@ -114,12 +114,14 @@ vector<Student> Db::queryToStudentVector(QSqlQuery &query){
 }
 vector<Grade> Db::queryToGradeVector(QSqlQuery &query){
     vector<Grade> grades;
+    int idNo = query.record().indexOf("id");
     int studentIdNo = query.record().indexOf("studentId");
     int courseIdNo = query.record().indexOf("courseId");
     int takeTimeNo = query.record().indexOf("takeTime");
     int scoreNo = query.record().indexOf("score");
     while (query.next()){
         Grade grade(
+                    query.value(idNo).toInt(),
                     query.value(studentIdNo).toInt(),
                     query.value(courseIdNo).toInt(),
                     query.value(takeTimeNo).toString(),
@@ -345,6 +347,7 @@ bool Db::deleteGrade(int id){
     QSqlQuery query;
     query.prepare("DELETE FROM grade WHERE id = :id");
     query.bindValue(":id",id);
+    qDebug()<<getLastExecutedQuery(query);
     return query.exec();
 }
 

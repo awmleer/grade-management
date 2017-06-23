@@ -32,6 +32,8 @@ int main(int argc, char *argv[])
 
 
     /*some tests*/
+//    vector<Grade> grades = Grade::all();
+//    qDebug()<<grades[0].remove();
 //    Grade::create(1003,1,"2016first",98);
 //    vector<Grade> grades = Grade::searchByScore(40,70);
 //    qDebug()<<grades[0].fetchStudent().getName();

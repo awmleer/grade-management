@@ -7,7 +7,7 @@
 
 class Grade{
 public:
-    Grade(int studentId, int courseId, QString takeTime, int score);
+    Grade(int id, int studentId, int courseId, QString takeTime, int score);
     int getId(){
         return id;
     }
