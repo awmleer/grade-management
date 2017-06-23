@@ -94,14 +94,35 @@ vector<Course> Db::queryToCourseVector(QSqlQuery &query){
     qDebug() <<"Got "<<courses.size()<<" courses";
     return courses;
 }
+vector<Student> Db::queryToStudentVector(QSqlQuery &query){
+    vector<Student> students;
+    int idNo = query.record().indexOf("id");
+    int nameNo = query.record().indexOf("name");
+    int typeNo = query.record().indexOf("type");
+    int enrollmentYearNo = query.record().indexOf("enrollmentYear");
+    while (query.next()){
+        Student student(
+                    query.value(idNo).toInt(),
+                    query.value(nameNo).toString(),
+                    query.value(typeNo).toString(),
+                    query.value(enrollmentYearNo).toInt()
+                    );
+        students.push_back(student);
+    }
+    qDebug() <<"Got "<<students.size()<<" students";
+    return students;
+}
 
 
+
+/*
+ * Course Search
+*/
 vector<Course> Db::searchCourse(){
     qDebug()<<"Running Db::searchCourse()";
     QSqlQuery query("SELECT * FROM course;");
     return queryToCourseVector(query);
 }
-
 vector<Course> Db::searchCourseById(int id){
     qDebug()<<"Running Db::searchCourseById(int id)";
     QSqlQuery query;
@@ -110,7 +131,6 @@ vector<Course> Db::searchCourseById(int id){
     query.exec();
     return queryToCourseVector(query);
 }
-
 vector<Course> Db::searchCourseByName(QString name){
     qDebug()<<"Running Db::searchCourseByName(QString name)";
     QSqlQuery query;
@@ -123,6 +143,9 @@ vector<Course> Db::searchCourseByName(QString name){
     return queryToCourseVector(query);
 }
 
+/*
+ * Course Operation
+*/
 bool Db::updateCourse(int id, QString name, QString description){
     QSqlQuery query;
     query.prepare("UPDATE course SET name = :name, description = :description WHERE id = :id ;");
@@ -131,7 +154,6 @@ bool Db::updateCourse(int id, QString name, QString description){
     query.bindValue(":description",description);
     return query.exec();
 }
-
 int Db::insertCourse(QString name, QString description){
     QSqlQuery query;
     query.prepare("INSERT INTO course (name, description) "
@@ -146,7 +168,6 @@ int Db::insertCourse(QString name, QString description){
     query.next();
     return query.value(0).toInt();
 }
-
 bool Db::deleteCourse(int id){
     QSqlQuery query;
     query.prepare("DELETE FROM course WHERE id = :id");
@@ -155,6 +176,15 @@ bool Db::deleteCourse(int id){
 }
 
 
+
+/*
+ * Student Search
+*/
+vector<Student> Db::searchStudent(){
+    qDebug()<<"Running Db::searchStudent()";
+    QSqlQuery query("SELECT * FROM student;");
+    return queryToStudentVector(query);
+}
 
 
 

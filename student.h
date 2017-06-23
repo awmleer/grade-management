@@ -21,8 +21,11 @@ public:
     }
     void setEnrollmentYear(int enrollmentYear);
 
-//TODO: set these properties private
-//private:
+    bool save();
+    static Student create(QString name, QString description);
+    bool remove();
+
+private:
     int id;
     QString name;
     QString type;

@@ -2,8 +2,7 @@
 #define COURSE_H
 #include <QString>
 
-class Course
-{
+class Course{
 public:
     Course(int id, QString name, QString description);
     int getId(){
@@ -17,9 +16,11 @@ public:
         return description;
     }
     void setDescription(QString description);
+
     bool save();
     static Course create(QString name, QString description);
     bool remove();
+
 private:
     int id;
     QString name;

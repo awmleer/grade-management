@@ -13,6 +13,7 @@ namespace Db {
     QString getLastExecutedQuery(const QSqlQuery& query);//for DEBUG
 
     vector<Course> queryToCourseVector(QSqlQuery &query);
+    vector<Student> queryToStudentVector(QSqlQuery &query);
 
 
     vector<Course> searchCourse();
@@ -22,6 +23,8 @@ namespace Db {
     bool updateCourse(int id, QString name, QString description);
     int insertCourse(QString name, QString description);//returns id of the new course
     bool deleteCourse(int id);
+
+    vector<Student> searchStudent();
 
     vector<Student> test();
     bool testInsert();
