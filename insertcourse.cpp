@@ -29,7 +29,7 @@ void insertcourse::on_buttonBox_accepted()
 
     m_name = ui->CourseName->text();
     m_description = ui->Description->text();
-    int id = Db::insertCourse(m_name,m_description);
+    int id = Course::create(m_name,m_description);
     QMessageBox::warning(this,tr("Insertion successed!"),tr(qPrintable("The course id of "+m_name+" is "+QString::number(id,10))));
     return;
 }

@@ -20,38 +20,47 @@ selectcourse::~selectcourse()
 
 void selectcourse::on_buttonBox_accepted()
 {
-    if (ui->CourseId->text().isEmpty()) {
-        //QMessageBox::warning(this,tr("添加失败"),tr("请将课程名称和课程编号填写完整"));
-        QMessageBox::warning(this,tr("Input inlegal!"),tr("Please complete the course id or course name"));
+
+}
+
+void selectcourse::on_pushButton_clicked()
+{
+    vector<Course> selCourseRes;
+    if (!ui->CourseId->text().isEmpty()) {
+
+        QString idStr =  ui->CourseId->text();
+        int id =idStr.toInt();
+        selCourseRes = Db::searchCourseById(id);
+
+    }
+
+    else if (!ui->CourseName->text().isEmpty()) {
+        selCourseRes = Db::searchCourseByName(ui->CourseName->text());
+    }
+    else {
+        QMessageBox::warning(this,tr("Input illegal!"),tr("Please complete the course id or course name"));
         return;
     }
 
-    QString idStr =  ui->CourseId->text();
-    int id =idStr.toInt();
-    vector<Course> selCourseRes = Db::searchCourseById(id);
 
-    QTableWidget * tableWidget = new QTableWidget(selCourseRes.size(),4);
+    //QTableWidget * tableWidget = new QTableWidget();
+    ui->tableWidget->setRowCount(selCourseRes.size());
+    ui->tableWidget->setColumnCount(3);
     //tableWidget->setWindowTitle("Student result display");
-    //w.setCentralWidget(tableWidget);
+    //this->setCentralWidget(tableWidget);
 
-    tableWidget->resize(900,300);
+    //tableWidget->resize(900,300);
 
     QStringList header;
     header << "id" << "name" << "description";
-    tableWidget->setHorizontalHeaderLabels(header);
+    ui->tableWidget->setHorizontalHeaderLabels(header);
     for (int i = 0;i < selCourseRes.size();i++) {
-        tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
-        tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
-        tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
+        ui->tableWidget->setItem(i,0,new QTableWidgetItem(QString::number(selCourseRes[i].getId(),10)));
+        ui->tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
+        ui->tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
 
     }
 
-    tableWidget->show();
+    ui->tableWidget->show();
 
-
-//    m_name = ui->CourseName->text();
-//    m_description = ui->Description->text();
-//    int id = Db::insertCourse(m_name,m_description);
-//    QMessageBox::warning(this,tr("Insertion successed!"),tr(qPrintable("The course id of "+m_name+" is "+QString::number(id,10))));
-//    return;
 }
