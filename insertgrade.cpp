@@ -31,7 +31,7 @@ void insertgrade::on_insertGrade_clicked()
     QString scoreStr = ui->score->text();
     int score = scoreStr.toInt();
 
-    if (!Grade::create(sId,cId,timeStr,score))
+    if (Grade::create(sId,cId,timeStr,score))
          QMessageBox::warning(this,tr("Insertion succeed!"),tr("The grade information has been added"));
     else
          QMessageBox::warning(this,tr("Insertion failed!"),tr("Make sure the grade doesn't exist."));
