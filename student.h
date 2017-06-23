@@ -29,9 +29,9 @@ public:
 
     static int create(int id, QString name, QString type, int enrollmentYear);//returns the studentId if success, else returns -1
     static vector<Student> all();
-    static vector<Student> searchById(int id);
-    static vector<Student> searchByName(QString name);
-    static vector<Student> searchByType(QString type);
+    static vector<Student> searchById(int id);//exact match
+    static vector<Student> searchByName(QString name);//fuzzy match
+    static vector<Student> searchByType(QString type);//exact match
 
 private:
     int id;
