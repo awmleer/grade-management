@@ -1,5 +1,6 @@
 #include "grade.h"
 #include "db.h"
+#include <vector>
 
 Grade::Grade(int studentId, int courseId, QString takeTime, int score)
     :studentId(studentId),courseId(courseId),takeTime(takeTime),score(score){}
@@ -32,4 +33,31 @@ int Grade::create(int studentId, int courseId, QString takeTime, int score){
 bool Grade::remove(){
     return Db::deleteGrade(id);
 }
+
+
+vector<Grade> Grade::all(){
+    return Db::searchGrade();
+}
+
+vector<Grade> Grade::searchById(int id){
+    return Db::searchGradeById(id);
+}
+
+vector<Grade> Grade::searchByCourseId(int courseId){
+    return Db::searchGradeByCourseId(courseId);
+}
+
+vector<Grade> Grade::searchByStudentId(int studentId){
+    return Db::searchGradeByStudentId(studentId);
+}
+
+vector<Grade> Grade::searchByTakeTime(QString takeTime){
+    return Db::searchGradeByTakeTime(takeTime);
+}
+
+vector<Grade> Grade::searchByScore(int min, int max){
+    return Db::searchGradeByScore(min,max);
+}
+
+
 

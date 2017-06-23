@@ -265,6 +265,50 @@ bool Db::deleteStudent(int id){
 
 
 
+/*
+ * Grade Search
+*/
+vector<Grade> Db::searchGrade(){
+    QSqlQuery query("SELECT * FROM grade;");
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeById(int id){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE id = :id ;");
+    query.bindValue(":id",id);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByCourseId(int courseId){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE courseId = :courseId ;");
+    query.bindValue(":courseId",courseId);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByStudentId(int studentId){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE studentId = :studentId ;");
+    query.bindValue(":studentId",studentId);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByTakeTime(QString takeTime){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE takeTime = :takeTime ;");
+    query.bindValue(":takeTime",takeTime);
+    query.exec();
+    return queryToGradeVector(query);
+}
+vector<Grade> Db::searchGradeByScore(int min, int max){
+    QSqlQuery query;
+    query.prepare("SELECT * FROM grade WHERE score >= :min AND score <= :max ;");
+    query.bindValue(":min",min);
+    query.bindValue(":max",max);
+    query.exec();
+    return queryToGradeVector(query);
+}
+
 
 
 /*
