@@ -1,6 +1,8 @@
 #include "course.h"
 #include "db.h"
 
+using namespace std;
+
 Course::Course(int id, QString name, QString description):
     id(id), name(name), description(description){}
 
@@ -24,3 +26,18 @@ int Course::create(QString name, QString description){
 bool Course::remove(){
     return Db::deleteCourse(id);
 }
+
+vector<Course> Course::all(){
+    return Db::searchCourse();
+}
+
+vector<Course> Course::searchById(int id){
+    return Db::searchCourseById(id);
+}
+
+vector<Course> Course::searchByName(QString name){
+    return Db::searchCourseByName(name);
+}
+
+
+

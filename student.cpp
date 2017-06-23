@@ -2,10 +2,8 @@
 #include <QString>
 #include "db.h"
 
-//Student::Student(int id):
-  //  id(id){}
-//id(id), name(name), type(type), enrollmentYear(enrollmentYear){}
-//Student::Student(){}
+using namespace std;
+
 Student::Student(int id, QString name, QString type, int enrollmentYear):
     id(id), name(name), type(type), enrollmentYear(enrollmentYear){}
 
@@ -33,6 +31,22 @@ int Student::create(int id, QString name, QString type, int enrollmentYear){
 
 bool Student::remove(){
     return Db::deleteStudent(id);
+}
+
+vector<Student> Student::all(){
+    return Db::searchStudent();
+}
+
+vector<Student> Student::searchById(int id){
+    return Db::searchStudentById(id);
+}
+
+vector<Student> Student::searchByName(QString name){
+    return Db::searchStudentByName(name);
+}
+
+vector<Student> Student::searchByType(QString type){
+    return Db::searchStudentByType(type);
 }
 
 

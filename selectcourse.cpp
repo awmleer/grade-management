@@ -59,6 +59,7 @@ void selectcourse::on_pushButton_clicked()
         ui->tableWidget->setItem(i,1,new QTableWidgetItem(selCourseRes[i].getName()));
         ui->tableWidget->setItem(i,2,new QTableWidgetItem(selCourseRes[i].getDescription()));
 
+
     }
 
     ui->tableWidget->show();
