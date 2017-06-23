@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
 
     /*some tests*/
-//    Db::insertStudent(1003,"小王","master",2015);
+    Student::create(1003,"小王","master",2016);
 //    Db::searchStudent();
 //    Db::searchStudentById(1001);
 //    Db::searchStudentByName("Bart");

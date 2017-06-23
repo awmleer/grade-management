@@ -17,9 +17,8 @@ bool Course::save(){
 }
 
 
-Course Course::create(QString name, QString description){
-    int id=Db::insertCourse(name,description);
-    return Course(id,name,description);
+int Course::create(QString name, QString description){
+    return Db::insertCourse(name,description);
 }
 
 bool Course::remove(){

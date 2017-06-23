@@ -1,5 +1,6 @@
 #include "student.h"
 #include <QString>
+#include "db.h"
 
 //Student::Student(int id):
   //  id(id){}
@@ -19,4 +20,19 @@ void Student::setType(QString type){
 void Student::setEnrollmentYear(int enrollmentYear){
     this->enrollmentYear=enrollmentYear;
 }
+
+
+
+bool Student::save(){
+    return Db::updateStudent(id,name,type,enrollmentYear);
+}
+
+int Student::create(int id, QString name, QString type, int enrollmentYear){
+    return Db::insertStudent(id,name,type,enrollmentYear);
+}
+
+bool Student::remove(){
+    return Db::deleteStudent(id);
+}
+
 
