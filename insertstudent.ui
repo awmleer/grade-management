@@ -146,6 +146,30 @@
     <string>Cancel</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>671</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/blue/blue8.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
+  <zorder>studentId</zorder>
+  <zorder>studentName</zorder>
+  <zorder>studentEnrollmentYear</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>studentType</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
  </widget>
  <resources/>
  <connections/>
