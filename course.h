@@ -24,8 +24,8 @@ public:
     bool remove();
     static int create(QString name, QString description);//returns the courseId if success, else returns -1
     static vector<Course> all();
-    static vector<Course> searchById(int id);
-    static vector<Course> searchByName(QString name);
+    static vector<Course> searchById(int id);//exact match
+    static vector<Course> searchByName(QString name);//fuzzy match
 
 private:
     int id;
